@@ -1,0 +1,11 @@
+import "./app";
+import "./services/ServicioAlumnos";
+import "./services/ServicioAsignaturas";
+import "./alumnos/alumnosDetalle";
+import "./alumnos/alumnosCreacion";
+import "./alumnos/alumnosListado";
+import "./asignaturas/asignaturasDetalle";
+import "./asignaturas/asignaturasCreacion";
+import "./asignaturas/asignaturasListado";
+import "./MainControlador";
+import "./sidenav/ControladorSidenav";

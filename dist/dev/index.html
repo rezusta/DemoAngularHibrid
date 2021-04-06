@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.css">
+    <link rel="stylesheet" href="/public/styles.css" />
+    
+  <script defer src="/ng1.bundle.js"></script></head>
+
+  <body>
+    <div ng-controller="MainControlador">
+      <md-sidenav class="md-sidenav-left" md-component-id="right">
+
+        <md-toolbar class="md-theme-light">
+          <h1 class="md-toolbar-tools">Menú</h1>
+        </md-toolbar>
+        <md-content ng-controller="ControladorSidenav" style="text-align: left;" layout-padding>
+          <div class="menuItem" ng-click="alumnos()">
+            <div class="menuItem">Alumnos</div>
+          </div>
+          <div class="menuItem" ng-click="asignaturas()">
+            <div class="menuItem">Asignaturas</div>
+          </div>
+        </md-content>
+      </md-sidenav>
+
+      <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <md-icon class="md-secondary md-warn menuicon" style="margin-right: 10px;" ng-click="toggleRight()" aria-label="Chat" md-svg-icon="./assets/menu.svg"></md-icon>
+          <h2 flex md-truncate>Demo AngularJS</h2>
+          <span>TFM - Iñigo Rezusta</span>
+        </div>
+      </md-toolbar>
+    </div>
+    <ng-view></ng-view>
+  </body>
+</html>
