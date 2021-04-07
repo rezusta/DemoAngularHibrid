@@ -7,7 +7,10 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 
 module.exports = {
     entry: {
+        'polyfills': './public/polyfills.ts',
+        'vendor': './public/vendor.ts',
         'ng1' : './public/index.ts',
+        'app' : './public/main.ts'
     },
 
     output: {
@@ -50,7 +53,6 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.SplitChunksPlugin({
-            name: 'common', 
             minChunks: Infinity
         }),
         new webpack.SourceMapDevToolPlugin({
@@ -66,6 +68,11 @@ module.exports = {
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
-        })
+        }),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            helpers.root('./src'),
+            {}
+        )
     ]
 }
