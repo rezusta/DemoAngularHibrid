@@ -25,10 +25,4 @@ import { AppComponent } from './app.component';
       
   ]
 })
-export class AppModule {
-  constructor(private upgrade: UpgradeModule) { }
-  ngDoBootstrap() {
-    this.upgrade.bootstrap(document.documentElement, ['demoAngularJS']);
-    console.log('Hibriddd');
-  }
-}
+export class AppModule {}
